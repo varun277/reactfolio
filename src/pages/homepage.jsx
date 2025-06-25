@@ -154,10 +154,10 @@ const Homepage = () => {
 					</div>
 
 					<div className="skills-container">
-						<div className="skills-title">Top Skills</div>
+						<div className="skills-title">Top skills ⚡🚀</div>
 						<div className="icons-container">
 							{
-								skills.map((item) => (<img src={item?.icon} className="skill-icon-style" alt="" />))
+								skills.map((item) => (<div className="iconBox"><img src={item?.icon} className="skill-icon-style" alt="" /></div>))
 							}
 						</div>
 					</div>
@@ -168,7 +168,7 @@ const Homepage = () => {
 						</div>
 
 						<div className="homepage-after-title">
-							<div className="homepage-articles">
+							{/* <div className="homepage-articles">
 								{myArticles.map((article, index) => (
 									<div
 										className="homepage-article"
@@ -183,7 +183,7 @@ const Homepage = () => {
 										/>
 									</div>
 								))}
-							</div>
+							</div> */}
 
 							<div className="homepage-works">
 								<Works />
