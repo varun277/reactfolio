@@ -16,17 +16,15 @@ import NavBar from "../components/common/navBar";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
-
 import INFO from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
-
 import "./styles/homepage.css";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
-	const [logoSize, setLogoSize] = useState(80);
-	const [oldLogoSize, setOldLogoSize] = useState(80);
+	const [logoSize, setLogoSize] = useState(160);
+	const [oldLogoSize, setOldLogoSize] = useState(160);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -36,7 +34,7 @@ const Homepage = () => {
 		const handleScroll = () => {
 			let scroll = Math.round(window.pageYOffset, 2);
 
-			let newLogoSize = 80 - (scroll * 4) / 10;
+			let newLogoSize = 160 - (scroll * 4) / 10;
 
 			if (newLogoSize < oldLogoSize) {
 				if (newLogoSize > 40) {
@@ -86,86 +84,76 @@ const Homepage = () => {
 						<div style={logoStyle}>
 							<Logo width={logoSize} link={false} />
 						</div>
-					</div>
-
-					<div className="homepage-container">
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
 								<div className="title homepage-title">
 									{INFO.homepage.title}
 								</div>
 
+								<div className="secondaryTitle homepage-title">
+									{INFO.homepage.subTitle}
+								</div>
+
 								<div className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
 								</div>
 							</div>
-
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="homepage-image"
-										/>
-									</div>
-								</div>
+							<div className="homepage-socials">
+								<a
+									href={INFO.socials.twitter}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faTwitter}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.github}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faGithub}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.stackoverflow}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faStackOverflow}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.instagram}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faInstagram}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={`mailto:${INFO.main.email}`}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faMailBulk}
+										className="homepage-social-icon"
+									/>
+								</a>
 							</div>
 						</div>
+					</div>
 
-						<div className="homepage-socials">
-							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.stackoverflow}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faStackOverflow}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faInstagram}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
-						</div>
-
+					<div className="homepage-container">
 						<div className="homepage-projects">
 							<AllProjects />
 						</div>
