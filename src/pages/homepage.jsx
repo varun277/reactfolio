@@ -8,6 +8,7 @@ import {
 	faGithub,
 	faStackOverflow,
 	faInstagram,
+	faReact,
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
@@ -16,15 +17,15 @@ import NavBar from "../components/common/navBar";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
-import INFO from "../data/user";
+import INFO, { skills } from "../data/user";
 import SEO from "../data/seo";
 import myArticles from "../data/articles";
 import "./styles/homepage.css";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
-	const [logoSize, setLogoSize] = useState(160);
-	const [oldLogoSize, setOldLogoSize] = useState(160);
+	const [logoSize, setLogoSize] = useState(180);
+	const [oldLogoSize, setOldLogoSize] = useState(180);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -33,8 +34,7 @@ const Homepage = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			let scroll = Math.round(window.pageYOffset, 2);
-
-			let newLogoSize = 160 - (scroll * 4) / 10;
+			let newLogoSize = 180 - (scroll * 4) / 10;
 
 			if (newLogoSize < oldLogoSize) {
 				if (newLogoSize > 40) {
@@ -98,58 +98,67 @@ const Homepage = () => {
 									{INFO.homepage.description}
 								</div>
 							</div>
-							<div className="homepage-socials">
-								<a
-									href={INFO.socials.twitter}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faTwitter}
-										className="homepage-social-icon"
-									/>
-								</a>
-								<a
-									href={INFO.socials.github}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faGithub}
-										className="homepage-social-icon"
-									/>
-								</a>
-								<a
-									href={INFO.socials.stackoverflow}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faStackOverflow}
-										className="homepage-social-icon"
-									/>
-								</a>
-								<a
-									href={INFO.socials.instagram}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faInstagram}
-										className="homepage-social-icon"
-									/>
-								</a>
-								<a
-									href={`mailto:${INFO.main.email}`}
-									target="_blank"
-									rel="noreferrer"
-								>
-									<FontAwesomeIcon
-										icon={faMailBulk}
-										className="homepage-social-icon"
-									/>
-								</a>
-							</div>
+						</div>
+					</div>
+					<div className="homepage-socials">
+						<a
+							href={INFO.socials.github}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon
+								icon={faGithub}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={INFO.socials.stackoverflow}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon
+								icon={faStackOverflow}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={INFO.socials.instagram}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon
+								icon={faInstagram}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={`mailto:${INFO.main.email}`}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon
+								icon={faMailBulk}
+								className="homepage-social-icon"
+							/>
+						</a>
+						<a
+							href={INFO.socials.twitter}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon
+								icon={faTwitter}
+								className="homepage-social-icon"
+							/>
+						</a>
+					</div>
+
+					<div className="skills-container">
+						<div className="skills-title">Top Skills</div>
+						<div className="icons-container">
+							{
+								skills.map((item) => (<img src={item?.icon} className="skill-icon-style" alt="" />))
+							}
 						</div>
 					</div>
 

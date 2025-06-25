@@ -1,9 +1,16 @@
+import ReactIcon from '../assets/icons/reactjsIcon.svg';
+import nodejsIcon from '../assets/icons/nodejsIcon.svg';
+import figmaIcon from '..//assets/icons/figmaIcon.svg';
+import cssIcon from '../assets/icons/cssIcon.svg';
+import antDesignIcon from '../assets/icons/antdesign.svg';
+import htmlIcon from '../assets/icons/htmlIcon.svg'
+
 const INFO = {
 	main: {
 		title: "Portfolio By Varun",
 		name: "Varun Mohan",
 		email: "varunmohan277@gmail.com",
-		logo: "../logo.png",
+		logo: "../varun_random.png",
 	},
 
 	socials: {
@@ -36,50 +43,46 @@ const INFO = {
 
 	projects: [
 		{
-			title: "Project 1",
+			title: "TaskEnsure-The-To-do-App",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"A modern, responsive todo application that works seamlessly online and offline. TaskEnsure helps you manage your tasks efficiently with an intuitive interface and reliable local storage.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/varun277/TaskEnsure-The-To-do-App",
 		},
-
 		{
-			title: "Project 2",
+			title: "Netflix-clone using ReactJS",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 3",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 4",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"Developed a responsive Netflix-inspired streaming platform utilizing React.js, integrating RESTful API calls for dynamic content delivery.Integrated video playback using VideoJS library.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 5",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
+			link: "https://github.com/varun277/Netflix-clone-using-ReactJS",
+		}
 	],
 };
+
+export const skills = [
+	{
+		icon: ReactIcon
+	},
+	{
+		icon: "http://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/javascript/javascript_64x64.png"
+	},
+	{
+		icon: htmlIcon
+	},
+	{
+		icon: cssIcon
+	},
+	{
+		icon: nodejsIcon
+	},
+	{
+		icon: antDesignIcon
+	},
+	{
+		icon: figmaIcon
+	}
+]
 
 export default INFO;
